@@ -9,7 +9,7 @@ service using the official [Postgres docker image](https://hub.docker.com/_/post
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/postgres-client": {}
+    "ghcr.io/kramerc/rails-devcontainer/features/postgres-client": {}
 }
 ```
 

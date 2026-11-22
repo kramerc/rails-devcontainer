@@ -23,7 +23,7 @@ is the best place to start.
 
 Features are released using the [devcontainers/action](https://github.com/devcontainers/action) Github Action. When
 the `version` in a feature's `devcontainer-feature.json` is updated on the `main` branch, this action will publish a
-new version of that feature to `ghcr.io/rails/devcontainer/features/[feature name]`.
+new version of that feature to `ghcr.io/kramerc/rails-devcontainer/features/[feature name]`.
 
 ## Contributing to the ruby image
 
@@ -39,6 +39,11 @@ the same process as for features.
 The image is published using the [devcontainers/ci](https://github.com/devcontainers/ci) Github Action. This workflow
 is kicked off by the creation of a new tag on Github. Tags should be in the form `ruby-*.*.*`, where the * represent
 the **image version** (not the ruby version). Images will be published for all [maintained Ruby versions](https://www.ruby-lang.org/en/downloads/).
+The images are published to `ghcr.io/kramerc/rails-devcontainer/images/ruby`, with both
+`<image-version>-<ruby-version>` and `<ruby-version>` multi-architecture tags. The Ruby feature is built
+from the tagged checkout, and Git comes from the base image's distribution packages.
+The workflow requires Actions to be enabled with permission to write packages. Cut a new tag at a commit
+containing the updated workflow to use these settings.
 
 ## Publishing new Ruby versions
 
@@ -53,7 +58,7 @@ bin/add-ruby-version 3.4.5
 ```
 
 This script will:
-- Add the version to the build matrix in `.github/workflows/publish-new-image-version.yaml`
+- Add the version to the build matrix in `.github/ruby-versions.json`
 - Update the default version in `features/src/ruby/devcontainer-feature.json` if the new version is newer
 - Bump the feature version (patch increment) when the default Ruby version changes
 - Update test files to use the new Ruby version
@@ -68,11 +73,11 @@ You have two options:
 
 #### Option A: Publish specific Ruby versions (common)
 
-For immediate publishing of specific Ruby versions without cutting a new image version, run the **Publish New Ruby Versions** workflow manually. The workflow takes a list of ruby versions and image tags as inputs, formatted as comma separated arrays:
+For immediate publishing of specific Ruby versions without cutting a new image version, run the **Publish New Ruby Versions** workflow manually. The workflow takes comma-separated Ruby versions and image tags:
 
 ```
-ruby_versions: ["3.4.5"]
-image_versions: ["ruby-1.1.0"]
+ruby_versions: 3.4.5
+image_versions: ruby-1.1.0
 ```
 
 #### Option B: Wait for next image release (automatic)

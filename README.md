@@ -14,8 +14,8 @@ specification see https://containers.dev/.
 
 ## How to use the images and features in this repository
 
-As of Rails 7.2, all newly generated Rails applications will come with a dev container that utilizes the images and
-features in this repository to create a development environment for that app.
+As of Rails 7.2, newly generated Rails applications include a dev container using the upstream Rails images and
+features. This fork publishes its own images and features.
 
 You can add a dev container to an existing application by creating `devcontainer.json` in the `.devcontainer/` directory
 at the top level of the repository. A minimal dev container setup, for an application using SQLite and Active Storage
@@ -23,9 +23,9 @@ would look like this:
 
 ```json
 {
-  "image": "ghcr.io/rails/devcontainer/images/ruby:3.3.0",
+  "image": "ghcr.io/kramerc/rails-devcontainer/images/ruby:3.3.0",
   "features": {
-    "ghcr.io/rails/devcontainer/features/activestorage": {}
+    "ghcr.io/kramerc/rails-devcontainer/features/activestorage": {}
   }
 }
 ```

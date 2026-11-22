@@ -6,7 +6,7 @@ This Feature should work on recent versions of Debian/Ubuntu-based distributions
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "version": "3.3.0"
     }
 }
@@ -16,7 +16,7 @@ This Feature should work on recent versions of Debian/Ubuntu-based distributions
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "versionManager": "rbenv"
     }
 }
@@ -26,7 +26,7 @@ This Feature should work on recent versions of Debian/Ubuntu-based distributions
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "versionManager": "mise",
         "usePrecompiledRubies": true
     }

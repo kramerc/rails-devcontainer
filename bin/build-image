@@ -7,5 +7,6 @@ if [ -z "$1" ]; then
 fi
 
 RUBY_VERSION=$1
+IMAGE_NAME=${IMAGE_NAME:-ghcr.io/kramerc/rails-devcontainer/images/ruby}
 
-devcontainer build --workspace-folder images/ruby --image-name ghcr.io/rails/devcontainer/images/ruby:$RUBY_VERSION --output /tmp/output.tar
+devcontainer build --workspace-folder images/ruby --image-name "$IMAGE_NAME:$RUBY_VERSION" --output /tmp/output.tar

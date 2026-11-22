@@ -16,12 +16,15 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Set feature namespace
+        run: echo "FEATURES_NAMESPACE=${GITHUB_REPOSITORY,,}/features" >> "$GITHUB_ENV"
+
       - name: "Publish"
         uses: devcontainers/action@v1
         with:
           publish-features: "true"
           generate-docs: "true"
           base-path-to-features: "./features/src"
-          features-namespace: "rails/devcontainer/features"
+          features-namespace: ${{ env.FEATURES_NAMESPACE }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

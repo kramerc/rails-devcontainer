@@ -8,7 +8,7 @@ Installs Ruby and a version manager (mise or rbenv) along with the dependencies 
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "version": "3.3.0"
     }
 }
@@ -18,7 +18,7 @@ Installs Ruby and a version manager (mise or rbenv) along with the dependencies 
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "version": "3.3.0",
         "versionManager": "rbenv"
     }
@@ -29,7 +29,7 @@ Installs Ruby and a version manager (mise or rbenv) along with the dependencies 
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "version": "3.3.0",
         "versionManager": "mise"
     }
@@ -40,7 +40,7 @@ Installs Ruby and a version manager (mise or rbenv) along with the dependencies 
 
 ```json
 "features": {
-    "ghcr.io/rails/devcontainer/features/ruby:1": {
+    "ghcr.io/kramerc/rails-devcontainer/features/ruby:1": {
         "version": "3.3.0",
         "versionManager": "mise",
         "usePrecompiledRubies": true
